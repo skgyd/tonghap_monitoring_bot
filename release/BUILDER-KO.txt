@@ -1,0 +1,7 @@
+monitoringbot Windows 전체본 생성기
+
+1. monitoringbot-part1.zip과 monitoringbot-part2.zip을 같은 폴더에 둡니다.
+2. monitoringbot-builder.zip을 그 폴더 또는 그 하위 폴더에 풀고 MAKE-ZIP.cmd를 실행합니다.
+   생성기는 Windows PowerShell로 번들 Python의 해시를 확인하고, 모든 실행 파일과 서버 이미지를 검증해 조립합니다.
+3. 생성된 monitoringbot.zip을 새 폴더에 풀고 monitoringbot 폴더에서 monitoringbot.exe를 실행합니다.
+   서버는 시연 PC에서 동작합니다. 운영자 웹에 심사 계정 5개가 표시되고, 준비 완료 후 Mattermost 열기 버튼이 나타납니다.

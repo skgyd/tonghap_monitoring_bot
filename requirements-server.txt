@@ -1,0 +1,2 @@
+# Retains the browser adapter/runtime version verified with the existing app.
+playwright==1.48.0

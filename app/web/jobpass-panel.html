@@ -1,0 +1,26 @@
+<div class="product-title job-title">작업모니터 <span class="stamp" style="color:#c9d9d7">◷ <span class="clock"></span></span></div>
+<div class="top-status"><span>▧ 작업현황　 <span class="clock"></span></span><span style="color:#648aa2">⊙ 실행중(<!--RUNNING-COUNT-->)</span><span style="color:#a46a78">⊗ 실행오류(<b id="count">…</b>)</span><span>ⓘ 미실행(0)</span><span>✓ 실행완료(9,498)　›</span></div>
+<div class="filters">포커스그룹 <button>▣ 조회그룹선택</button><span>⚑</span>　경로 <input aria-label="경로"> 작업명 <input aria-label="작업명"><button>···</button> 에이전트</div>
+<section>
+<div class="section-title"><span>⊙ 실행중</span><span class="dots"><b>●</b>●●</span><span class="description">(*)실행중 목록은 조회기간과 관계없이 실행중인 작업을 모두 조회합니다.</span><span class="export">▧</span></div>
+<table class="job-table">
+<colgroup><col style="width:5%"><col style="width:29%"><col style="width:29%"><col style="width:20%"><col style="width:17%"></colgroup>
+<thead>
+<tr><th>번호</th><th>경로</th><th>작업명</th><th>태스크명</th><th>실행결과</th></tr></thead>
+<tbody id="running"><!--RUNNING-JOBS--></tbody></table>
+<div class="fake-scroll"></div>
+</section>
+<div data-source-list class="job-errors">
+<div class="section-title error-head"><span>⊗ 실행오류</span><span class="export">▧</span></div>
+<table class="job-table">
+<colgroup><col style="width:5%"><col style="width:23%"><col style="width:17%"><col style="width:29%"><col style="width:9%"><col style="width:11%"><col style="width:6%"></colgroup>
+<thead>
+<tr><th>번호</th><th>경로</th><th>작업명</th><th>태스크명 / 오류 내용</th><th>실행구분</th><th>실행결과</th><th>확인</th></tr></thead>
+<tbody id="rows"></tbody></table>
+<div class="fake-scroll"></div></div>
+<div class="pending">
+<div class="section-title pending-head">ⓘ 미실행<span class="export">▧</span></div>
+<table class="job-table">
+<thead>
+<tr><th style="width:6%">번호</th><th>경로</th><th>작업명</th><th>시작예정일시</th><th>종료예정일시</th><th>평균실행시간</th></tr></thead></table></div>
+<div class="fake-scroll"></div>

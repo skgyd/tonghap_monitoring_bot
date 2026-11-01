@@ -1,0 +1,15 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>관제 브릿지</title><link rel="stylesheet" href="/style.css"></head><body>
+<header><div><small>INCIDENT BRIDGE · CLOUD</small><h1>관제 브릿지</h1></div><a href="/welcome" style="color:white">시연 시작 화면</a><span id="mode">연결 대기</span></header>
+<main><section id="login"><h2>관리 화면 연결</h2><p>시연 계정으로 로그인하면 연결됩니다. 세션이 만료되면 <a href="/login">다시 로그인</a>하세요.</p><input id="token" type="password" placeholder="관리 토큰" autocomplete="off"><button id="connect">연결</button></section>
+<div id="content" hidden><section class="toolbar"><div><h2>장애 전달 · 처리 현황</h2><p>원본 목록 상태와 담당자 처리 상태를 별도로 추적합니다.</p></div><a href="/sql">SQLite 테이블 조회 →</a></section>
+<div id="errors" role="alert"></div><div id="stats" class="stats"></div>
+<section id="demo"><h3>모의 시연</h3><p>기본 실행에서는 모의 웹 화면을 실제 브라우저로 읽고 캡처합니다. 수집기를 끄면 합성 이미지로 즉시 등록합니다. 외부망 통합 시연에서는 실제 Mattermost 시연 서버로 전송합니다.</p><button data-add="polestar">폴스타 에러 발생</button><button data-add="jobpass">잡패스 에러 발생</button><button id="failure" class="secondary">전송 실패 시험</button><a href="/mock/jobpass" target="_blank" rel="noopener">잡패스 모의 팝업</a></section>
+<section><div class="toolbar"><h3>장애 목록</h3><select id="filter"><option value="">전체</option><option value="NEW">미접수</option><option value="IN_PROGRESS">처리 중</option><option value="COMPLETED">완료</option></select></div><div class="tablewrap"><table><thead><tr><th>시스템 / 잡</th><th>내용</th><th>담당자 상태</th><th>원본 목록</th><th>전송</th><th>조작</th></tr></thead><tbody id="incidents"></tbody></table></div></section>
+<section id="demoChat"><h3>모의 메신저 채널 — 실제 Mattermost 아님</h3><p>외부 서버 없이 전송과 담당자 버튼 동작을 체험합니다. 관제 채널은 같은 사건의 상태를 보여줍니다.</p><label>시연 담당자 <select id="demoActor"><option value="DEMO_OWNER_A">담당자 A</option><option value="DEMO_OWNER_B">담당자 B</option></select></label><div id="chatChannels" class="chat-grid"></div></section><section id="detail" hidden></section>
+<section><h3>수집기 상태</h3><div id="collectors"></div><p class="muted">정상 조회 시각을 확인하세요. 로그인 만료·선택자 변경은 수집 오류로 표시됩니다.</p></section>
+<details><summary>전송 대기열 · 실패 복구</summary><div id="deliveries" class="tablewrap"></div></details>
+<details><summary>답글·이모지 동기화 / 재시도</summary><p>업무 장애 스레드에서 관제팀으로 단방향 동기화합니다. 실제 반응자·인원은 전달문에 표시합니다.</p><div id="activity" class="tablewrap"></div></details>
+<details><summary>담당 채널 매핑</summary><p>source는 polestar 또는 jobpass, target_key는 화면에서 추출한 업무명, channel_id는 시연 채널 ID입니다. 채널 ID는 SQL 조회의 routes 테이블에서 확인할 수 있습니다. 신규 장애에 적용되며 기존 장애는 상세 화면의 채널 변경을 사용하세요.</p><textarea id="routes" rows="8" spellcheck="false"></textarea><button id="saveRoutes">매핑 저장</button></details>
+<details><summary>연결 설정</summary><p>서버 연결 정보는 운영자가 관리합니다. 이 화면에는 시연용 공개 정보만 표시합니다.</p><textarea id="config" rows="20" spellcheck="false"></textarea><button id="saveConfig">설정 저장</button></details>
+<details><summary>처리 이력 · 알림</summary><div id="history"></div></details>
+</div><p id="message" role="status"></p></main><footer>서버 실행 · 가상 업무 화면 · 실제 Mattermost 연동 · 서버 SQLite 저장</footer><script src="/app.js"></script></body></html>

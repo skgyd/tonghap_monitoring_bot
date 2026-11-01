@@ -1,0 +1,9 @@
+IncidentBridge 1.4.6 / verification scope
+
+The Python regression suite exercises incident identity, mapping, concurrency, delivery, replies/reactions, source records, operator authentication and round lifecycle. The two-round control integration uses the real HTTP controller, event store, SQLite and scoped cleanup with guest boot/provisioning replaced by a test fixture.
+The build verifies each file hash and the entire resulting ZIP. The base operating system image is copied and checked against its SHA256 before it is used as a writable guest disk; changes are never merged into the seed.
+Latest verification on 2026-11-01 used Linux QEMU and real Chromium with the bundled Mattermost/PostgreSQL guest. All 93 Python regression tests passed, including the browser source-panel tests. A freshly extracted delivery was exercised through the operator buttons, both source screens, capture attachments and actual Mattermost delivery. The first JOB-PASS event reached monitor and finance, the first Polestar event reached monitor and corporate-accounting, and subsequent source events used the four-business catalog. The full and split ZIP contents were compared and all 758 manifest file hashes were checked.
+Windows-native execution remains a separate acceptance step. VERIFY-WINDOWS.cmd provides that run on a stopped Windows demo PC.
+An internal production site requires additional approved DOM, channels, authentication and network access.
+
+The team-path tests cover four randomly selected businesses in both source systems, running-job paths, source events and JOB-PASS execution logs. Screen collectors must continue to extract the last business segment for routing.

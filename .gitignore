@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local configuration, credentials, browser profiles and session data.
+.env
+.env.*
+!.env.example
+config.json
+accounts.json
+secrets.json
+secrets.enc
+work/
+data/
+logs/
+captures/
+profiles/
+*.db
+*.db-*
+
+# Portable dependencies and generated release packages.
+/inputs/
+/build/
+/dist/
+/runtime/
+/server/
+*.qcow2
+*.zip
